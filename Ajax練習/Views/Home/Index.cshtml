@@ -36,12 +36,30 @@
                    new AjaxOptions {
                        HttpMethod = "GET" ,
                        UpdateTargetId = "divMessage2" ,
-                       InsertionMode = InsertionMode.Replace
+                       InsertionMode = InsertionMode.Replace,
+                       Confirm="delete?"
                    } )
 
     <div id="divMessage2" style="background-color:yellow">
     </div>
     <hr />
+    <h1>AJAX3 Form</h1>
+    @using (Ajax.BeginForm("HelloWorld2",
+                    new AjaxOptions
+                    {
+                        HttpMethod = "GET",
+                        UpdateTargetId = "divMessage3",
+                        InsertionMode = InsertionMode.InsertBefore
+                    }
+           )
+    )
+    {
+        <input type="text" name="userName" />
+        <input type="submit" />
+    }
+    <div id="divMessage3" style="background-color:yellow"></div>
+    <hr />
+
     <script src="~/Scripts/jquery-3.1.1.min.js"></script>
     <script src="~/Scripts/jquery.unobtrusive-ajax.js"></script>
 </body>
