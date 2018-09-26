@@ -29,6 +29,19 @@
     )
     <div id="divMessage" style="background-color:yellow"></div>
     <hr />
+
+    <h1>AJAX2</h1>
+    @Ajax.ActionLink( "refresh" , "HelloWorld2" ,
+                   new  { userName="mary" },
+                   new AjaxOptions {
+                       HttpMethod = "GET" ,
+                       UpdateTargetId = "divMessage2" ,
+                       InsertionMode = InsertionMode.Replace
+                   } )
+
+    <div id="divMessage2" style="background-color:yellow">
+    </div>
+    <hr />
     <script src="~/Scripts/jquery-3.1.1.min.js"></script>
     <script src="~/Scripts/jquery.unobtrusive-ajax.js"></script>
 </body>

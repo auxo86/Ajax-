@@ -19,6 +19,11 @@ namespace Ajax練習.Controllers
             ViewBag.message = $"HelloWorld, {DateTime.Now.ToString()}";
             return PartialView();
         }
+        public ActionResult HelloWorld2(string userName)
+        {
+            ViewBag.message = $"Hello {userName}, 現在是 {DateTime.Now.ToString()}";
+            return PartialView("HelloWorld");
+        }
 
     }
 }
