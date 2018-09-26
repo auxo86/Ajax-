@@ -1,0 +1,35 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <div>
+        @Html.ActionLink("refresh", "HelloWorld")
+        @Html.Action("HelloWorld")
+        <hr />
+    </div>
+    <h1>AJAX1</h1>
+    Server Time: @DateTime.Now
+    <br />
+    @Ajax.ActionLink("refresh", "HelloWorld",
+        new AjaxOptions
+        {
+            HttpMethod="GET",
+            UpdateTargetId="divMessage",
+            InsertionMode=InsertionMode.Replace
+        }
+    )
+    <div id="divMessage" style="background-color:yellow"></div>
+    <hr />
+    <script src="~/Scripts/jquery-3.1.1.min.js"></script>
+    <script src="~/Scripts/jquery.unobtrusive-ajax.js"></script>
+</body>
+</html>
